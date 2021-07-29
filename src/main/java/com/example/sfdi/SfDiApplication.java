@@ -18,9 +18,8 @@ public class SfDiApplication {
         // ask Spring context for controller instance
         MyController myController = (MyController) ctx.getBean("myController");
 
-        String greeting = myController.sayHello();
-
-        System.out.println(greeting);
+        System.out.println("------ Primary Bean");
+        System.out.println(myController.sayHello());
 
         // Property injection
         System.out.println("------ Property");
