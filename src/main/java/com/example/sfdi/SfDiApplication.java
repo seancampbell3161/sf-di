@@ -1,9 +1,6 @@
 package com.example.sfdi;
 
-import com.example.sfdi.controllers.ConstructorInjectedController;
-import com.example.sfdi.controllers.MyController;
-import com.example.sfdi.controllers.PropertyInjectedController;
-import com.example.sfdi.controllers.SetterInjectedController;
+import com.example.sfdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,9 @@ public class SfDiApplication {
     public static void main(String[] args) {
 
         ApplicationContext ctx = SpringApplication.run(SfDiApplication.class, args);
+
+        i18nController iController = (i18nController) ctx.getBean("i18nController");
+        System.out.println(iController.sayHello());
 
         // ask Spring context for controller instance
         MyController myController = (MyController) ctx.getBean("myController");
